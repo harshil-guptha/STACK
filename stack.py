@@ -1,7 +1,11 @@
 import pygame
 import sys
 import random
+from playsound import playsound
+
 pygame.init()
+pygame.mixer.music.load('stack sound.mp3')
+pygame.mixer.music.play()
 
 width = 700
 height = 900
@@ -156,7 +160,6 @@ def close():
 def gameLoop():
     global brickW, brickH, score, colorIndex, speed
     loop = True
-
     brickH = 25
     brickW = 200
     colorIndex = 0
@@ -190,5 +193,4 @@ def gameLoop():
 
         pygame.display.update()
         clock.tick(100)
-
 gameLoop()
